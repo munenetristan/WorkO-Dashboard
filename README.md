@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WorkO Admin Dashboard
+
+A Next.js (App Router) admin console for managing the WorkO marketplace. The dashboard provides workflows for admin authentication, countries management, services catalog controls, pricing, provider verification, job monitoring, ratings, and settings.
+
+## Features
+
+- Admin authentication with token storage + route protection
+- Country enable/disable management
+- 41-service catalog with gender tags and per-country toggles
+- Pricing management by country, city/zone, and service
+- Provider verification with approve/reject/suspend actions
+- Job monitoring with filters and timeline-ready layout
+- Ratings monitoring with dispute flagging
+- Settings for Firebase and payment keys
+- API client module with JWT attachment
+
+## Tech Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+### 1) Install dependencies
+
+```bash
+npm install
+```
+
+### 2) Configure environment variables
+
+Create a `.env.local` file based on `.env.example`:
+
+```bash
+cp .env.example .env.local
+```
+
+Set the backend base URL (expects `/api/v1`):
+
+```bash
+NEXT_PUBLIC_API_URL=https://api.worko.africa
+```
+
+### 3) Run the app
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The API client lives in `src/lib/api-client.ts` and attaches the JWT from `localStorage` using the `worko_admin_token` key. Update endpoint paths there if your backend versioning changes.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is private and intended for the WorkO admin team.
