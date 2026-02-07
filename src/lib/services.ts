@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export type GenderTag = "M" | "W" | "B";
 
 export type Service = {
@@ -6,6 +7,9 @@ export type Service = {
   genderTag: GenderTag;
   sortOrder: number;
 };
+=======
+import type { Service } from "@/lib/types";
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 
 export const servicesCatalog: Service[] = [
   { id: "svc-cleaning", name: "Home Cleaning", genderTag: "B", sortOrder: 1 },

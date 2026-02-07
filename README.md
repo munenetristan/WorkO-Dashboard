@@ -1,10 +1,15 @@
 # WorkO Admin Dashboard
 
+<<<<<<< HEAD
 A Next.js (App Router) admin console for managing the WorkO marketplace. The dashboard provides workflows for admin authentication, countries management, services catalog controls, pricing, provider verification, job monitoring, ratings, and settings.
+=======
+A Next.js (App Router) admin console for managing the WorkO marketplace. The dashboard provides workflows for admin authentication, country enablement, services catalog controls, pricing, provider verification, job monitoring, and admin user management.
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 
 ## Features
 
 - Admin authentication with token storage + route protection
+<<<<<<< HEAD
 - Country enable/disable management
 - 41-service catalog with gender tags and per-country toggles
 - Pricing management by country, city/zone, and service
@@ -12,6 +17,15 @@ A Next.js (App Router) admin console for managing the WorkO marketplace. The das
 - Job monitoring with filters and timeline-ready layout
 - Ratings monitoring with dispute flagging
 - Settings for Firebase and payment keys
+=======
+- Role-based navigation (SUPER_ADMIN vs ADMIN)
+- Country enable/disable management
+- 41-service catalog with gender tags and per-country toggles
+- Pricing management by country, city, and service
+- Provider verification with approve/reject/ban/suspend actions
+- Job monitoring with filters and timeline detail views
+- Settings screen with backend health check
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 - API client module with JWT attachment
 
 ## Tech Stack
@@ -39,7 +53,11 @@ cp .env.example .env.local
 Set the backend base URL (expects `/api/v1`):
 
 ```bash
+<<<<<<< HEAD
 NEXT_PUBLIC_API_URL=https://api.worko.africa
+=======
+NEXT_PUBLIC_API_URL=http://localhost:5000
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 ```
 
 ### 3) Run the app
@@ -52,7 +70,11 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## API Notes
 
+<<<<<<< HEAD
 The API client lives in `src/lib/api-client.ts` and attaches the JWT from `localStorage` using the `worko_admin_token` key. Update endpoint paths there if your backend versioning changes.
+=======
+The API client lives in `src/lib/api-client.ts` and attaches the JWT using the `worko_admin_token` key. Update endpoint paths there if your backend versioning changes.
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 
 ## Deployment
 

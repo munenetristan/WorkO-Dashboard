@@ -1,6 +1,10 @@
 "use client";
 
+<<<<<<< HEAD
 import { type ReactNode } from "react";
+=======
+import { type ReactNode, type InputHTMLAttributes } from "react";
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 
 const cx = (...classes: Array<string | false | null | undefined>) =>
   classes.filter(Boolean).join(" ");
@@ -38,12 +42,20 @@ export const Button = ({
   children,
   type = "button",
   onClick,
+<<<<<<< HEAD
+=======
+  disabled,
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 }: {
   variant?: "primary" | "secondary" | "ghost" | "danger";
   size?: "sm" | "md" | "lg";
   children: ReactNode;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
+<<<<<<< HEAD
+=======
+  disabled?: boolean;
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 }) => {
   const sizes = {
     sm: "h-9 px-3 text-sm",
@@ -61,10 +73,19 @@ export const Button = ({
     <button
       type={type}
       onClick={onClick}
+<<<<<<< HEAD
       className={cx(
         "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition",
         sizes[size],
         variants[variant]
+=======
+      disabled={disabled}
+      className={cx(
+        "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition",
+        sizes[size],
+        variants[variant],
+        disabled && "cursor-not-allowed opacity-60"
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
       )}
     >
       {children}
@@ -186,3 +207,60 @@ export const StatCard = ({
     </div>
   </Card>
 );
+<<<<<<< HEAD
+=======
+
+export const Input = ({
+  label,
+  className,
+  ...props
+}: InputHTMLAttributes<HTMLInputElement> & { label?: string }) => (
+  <label className="grid gap-2 text-sm font-medium text-slate-700">
+    {label ? label : null}
+    <input
+      {...props}
+      className={cx(
+        "h-11 rounded-lg border border-slate-200 px-4 text-sm text-slate-900 outline-none transition focus:border-slate-400",
+        className
+      )}
+    />
+  </label>
+);
+
+export const Select = ({
+  label,
+  children,
+  className,
+  ...props
+}: React.SelectHTMLAttributes<HTMLSelectElement> & { label?: string }) => (
+  <label className="grid gap-2 text-sm font-medium text-slate-700">
+    {label ? label : null}
+    <select
+      {...props}
+      className={cx(
+        "h-11 rounded-lg border border-slate-200 px-3 text-sm text-slate-900 outline-none transition focus:border-slate-400",
+        className
+      )}
+    >
+      {children}
+    </select>
+  </label>
+);
+
+export const Textarea = ({
+  label,
+  className,
+  ...props
+}: React.TextareaHTMLAttributes<HTMLTextAreaElement> & { label?: string }) => (
+  <label className="grid gap-2 text-sm font-medium text-slate-700">
+    {label ? label : null}
+    <textarea
+      {...props}
+      className={cx(
+        "min-h-[96px] rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-400",
+        className
+      )}
+    />
+  </label>
+);
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2

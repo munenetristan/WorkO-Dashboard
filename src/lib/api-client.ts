@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import { getAuthToken } from "@/lib/auth";
+
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
 export type ApiError = {
   message: string;
   status?: number;
@@ -5,6 +10,7 @@ export type ApiError = {
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
 
+<<<<<<< HEAD
 const getToken = () => {
   if (typeof window === "undefined") {
     return null;
@@ -15,6 +21,10 @@ const getToken = () => {
 
 const buildHeaders = (headers?: HeadersInit) => {
   const token = getToken();
+=======
+const buildHeaders = (headers?: HeadersInit) => {
+  const token = getAuthToken();
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
   return {
     "Content-Type": "application/json",
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
@@ -46,6 +56,10 @@ export const apiClient = {
     const response = await fetch(`${API_BASE_URL}${path}`, {
       method: "GET",
       headers: buildHeaders(headers),
+<<<<<<< HEAD
+=======
+      cache: "no-store",
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
     });
     return parseResponse<T>(response);
   },
@@ -89,9 +103,26 @@ export const apiPaths = {
   },
   countries: "/api/v1/admin/countries",
   services: "/api/v1/admin/services",
+<<<<<<< HEAD
   pricing: "/api/v1/admin/pricing",
   providers: "/api/v1/admin/providers",
   jobs: "/api/v1/admin/jobs",
   ratings: "/api/v1/admin/ratings",
+=======
+  servicesByCountry: (iso2: string) =>
+    `/api/v1/admin/services?country=${iso2}`,
+  serviceCountryToggle: (serviceId: string, iso2: string) =>
+    `/api/v1/admin/services/${serviceId}/countries/${iso2}`,
+  pricing: "/api/v1/admin/pricing",
+  pricingByCountry: (iso2: string) =>
+    `/api/v1/admin/pricing?country=${iso2}`,
+  providers: "/api/v1/admin/providers",
+  providerDetail: (id: string) => `/api/v1/admin/providers/${id}`,
+  providerAction: (id: string, action: string) =>
+    `/api/v1/admin/providers/${id}/${action}`,
+  jobs: "/api/v1/admin/jobs",
+  jobDetail: (id: string) => `/api/v1/admin/jobs/${id}`,
+  adminUsers: "/api/v1/admin/admins",
+>>>>>>> origin/codex/build-next.js-admin-dashboard-for-worko-ygwiw2
   settings: "/api/v1/admin/settings",
 };
